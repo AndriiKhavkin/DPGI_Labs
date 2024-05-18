@@ -6,14 +6,27 @@
         xmlns:local="clr-namespace:DPGI_Labs"
         mc:Ignorable="d"
         Title="Lab2" Height="400" Width="800">
-    
-    <StackPanel Margin="100 50">
+
+    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="450">
         <Label Content="Label:" HorizontalAlignment="Center" />
         <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
         <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
         <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
         <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <Button Margin="50" Content="Button" Width="300" Height="30"/>
-    </StackPanel>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <Label Content="Label:" HorizontalAlignment="Center" />
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
+        <Button Margin="200 20" Content="Button" Width="Auto" Height="Auto"/>
+    </WrapPanel>
 
 </Window>
