@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="Lab2" Height="400" Width="800">
 
-    <DockPanel LastChildFill="False">
-        <Label Content="Label" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
-        <TextBox DockPanel.Dock="Left" Width="300">TextBox</TextBox>
-        <TextBox DockPanel.Dock="Right" Width="300">TextBox</TextBox>
-        <Button DockPanel.Dock="Bottom" Content="Button" Height="Auto" Margin="50"/>
-    </DockPanel>
+    <Canvas Background="Cyan">
+        <Label Content="Label:" Canvas.Left="20" Canvas.Top="20" />
+        <TextBox Text="Text" Canvas.Left="40" Canvas.Top="40" Width="Auto" Height="Auto" />
+        <Button Content="Button" Canvas.Left="60" Canvas.Top="60" Width="Auto" Height="Auto" />
+    </Canvas>
 
 </Window>
