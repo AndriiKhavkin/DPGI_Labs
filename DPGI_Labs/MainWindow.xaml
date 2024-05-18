@@ -7,26 +7,11 @@
         mc:Ignorable="d"
         Title="Lab2" Height="400" Width="800">
 
-    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="450">
-        <Label Content="Label:" HorizontalAlignment="Center" />
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <Label Content="Label:" HorizontalAlignment="Center" />
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <TextBox Text="TextBox" Width="Auto" Height="Auto"/>
-        <Button Margin="200 20" Content="Button" Width="Auto" Height="Auto"/>
-    </WrapPanel>
+    <DockPanel LastChildFill="False">
+        <Label Content="Label" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+        <TextBox DockPanel.Dock="Left" Width="300">TextBox</TextBox>
+        <TextBox DockPanel.Dock="Right" Width="300">TextBox</TextBox>
+        <Button DockPanel.Dock="Bottom" Content="Button" Height="Auto" Margin="50"/>
+    </DockPanel>
 
 </Window>
