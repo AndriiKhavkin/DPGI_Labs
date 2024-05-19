@@ -31,7 +31,7 @@ namespace DPGI_Labs
         private void Execute_Save(object sender, ExecutedRoutedEventArgs e)
         {
             string startupPath = System.IO.Directory.GetCurrentDirectory();
-            System.IO.File.WriteAllText($"{startupPath}\\texts\\123.txt", TextBox1.Text);
+            System.IO.File.WriteAllText($"{startupPath}\\texts\\saved.txt", TextBox1.Text);
             MessageBox.Show("The file was saved!");
         }
 
@@ -74,13 +74,24 @@ namespace DPGI_Labs
             TextBox1.Text += Clipboard.GetText();
         }
 
-        
-
-
-
         public MainWindow()
         {
             InitializeComponent();
+
+            CommandBinding saveCommand = new CommandBinding(ApplicationCommands.Save, Execute_Save, CanExecute_Save);
+            CommandBindings.Add(saveCommand);
+
+            CommandBinding openCommand = new CommandBinding(ApplicationCommands.Open, Execute_OpenFile, CanExecute_OpenFile);
+            CommandBindings.Add(openCommand);
+
+            CommandBinding deleteCommand = new CommandBinding(ApplicationCommands.Delete, Execute_DeleteText, CanExecute_DeleteText);
+            CommandBindings.Add(deleteCommand);
+
+            CommandBinding copyCommand = new CommandBinding(ApplicationCommands.Copy, Execute_CopyText, CanExecute_CopyText);
+            CommandBindings.Add(copyCommand);
+
+            CommandBinding pasteCommand = new CommandBinding(ApplicationCommands.Paste, Execute_PasteText, CanExecute_PasteText);
+            CommandBindings.Add(pasteCommand);
         }
     }
 }
