@@ -5,74 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DPGI_Labs"
         mc:Ignorable="d"
-        Title="TextEditor" Height="400" Width="800">
-    
-    <Window.Resources>
-        <LinearGradientBrush x:Key="LinearPanelBrush" StartPoint="0,0" EndPoint="1,0">
-            <GradientStop Color="Yellow" Offset="0"/>
-            <GradientStop Color="Cyan" Offset="0.5"/>
-            <GradientStop Color="Yellow" Offset="1"/>
-        </LinearGradientBrush>
-
-        <Style x:Key="CustomButtonStyle" TargetType="Button">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="White"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" Background="{StaticResource LinearPanelBrush}">
-            <StackPanel Orientation="Horizontal">
-                <Button ToolTip="Відкрити" Command="Open">
-                    <Image Source="Resources/open.jpg" Width="70" Height="70"/>
-                </Button>
-                <Button ToolTip="Стерти" Command="Delete">
-                    <Image Source="Resources/delete.png" Width="70" Height="70"/>
-                </Button>
-                <Button ToolTip="Копіювати" Command="Copy">
-                    <Image Source="Resources/copy.png" Width="70" Height="70"/>
-                </Button>
-                <Button ToolTip="Вставити" Command="Paste">
-                    <Image Source="Resources/paste.png" Width="70" Height="70"/>
-                </Button>
-            </StackPanel>
-        </Border>
-
-        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" Background="{StaticResource LinearPanelBrush}">
-            <Grid Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <TextBox Name="TextBox1" Grid.Row="0" Margin="0,0,0,10" VerticalScrollBarVisibility="Auto" FontSize="{Binding ElementName=fontSlider, Path=Value}"/>
-
-                <DockPanel Grid.Row="1" VerticalAlignment="Bottom">
-                    <Label DockPanel.Dock="Left" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Розмір шрифту:" Margin="4"/>
-                    <Slider DockPanel.Dock="Left" Name="fontSlider" Width="150" MinWidth="100" Margin="4" Minimum="12" Maximum="100" />
-                    <Button DockPanel.Dock="Right" Content="ОК" Width="30" Command="Save" />
-                </DockPanel>
-            </Grid>
-        </Border>
 
     </Grid>
 </Window>
