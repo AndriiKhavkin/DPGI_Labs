@@ -64,9 +64,11 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBox Grid.Row="0" Margin="0,0,0,10" VerticalScrollBarVisibility="Auto" />
+                <TextBox Name="TextBox1" Grid.Row="0" Margin="0,0,0,10" VerticalScrollBarVisibility="Auto" FontSize="{Binding ElementName=fontSlider, Path=Value}"/>
 
                 <DockPanel Grid.Row="1" VerticalAlignment="Bottom">
+                    <Label DockPanel.Dock="Left" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Розмір шрифту:" Margin="4"/>
+                    <Slider DockPanel.Dock="Left" Name="fontSlider" Width="150" MinWidth="100" Margin="4" Minimum="12" Maximum="100" />
                     <Button DockPanel.Dock="Right" Content="ОК" Width="30"/>
                 </DockPanel>
             </Grid>
