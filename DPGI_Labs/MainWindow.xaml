@@ -29,6 +29,18 @@
                 </Button>
             </StackPanel>
         </Border>
+        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="0" Margin="0,0,0,10" VerticalScrollBarVisibility="Auto" />
+                <DockPanel Grid.Row="1" VerticalAlignment="Bottom">
+                    <Button DockPanel.Dock="Right" Content="ОК" Width="20"/>
+                </DockPanel>
+            </Grid>
+        </Border>
     </Grid>
 
 </Window>
