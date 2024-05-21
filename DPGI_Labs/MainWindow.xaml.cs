@@ -14,9 +14,15 @@ namespace DPGI_Labs
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    public class CurrencyInfo
+    {
+        public string Name { get; set; }
+        public double Rate { get; set; }
+    }
     public partial class MainWindow : Window
     {
-        private Dictionary<string, double> exchangeRates;
+        private Dictionary<string, CurrencyInfo> exchangeRates;
         public MainWindow()
         {
             InitializeComponent(); 
@@ -27,19 +33,26 @@ namespace DPGI_Labs
         private void LoadExchangeRates()
         {
             // Приклад даних, додайте більше курсів за потреби
-            exchangeRates = new Dictionary<string, double>
+            exchangeRates = new Dictionary<string, CurrencyInfo>
             {
-                { "USD", 27.50 },
-                { "EUR", 32.00 },
-                { "GBP", 37.50 }
+                { "USD", new CurrencyInfo { Name = "United States Dollar", Rate = 27.50 } },
+                { "EUR", new CurrencyInfo { Name = "Euro", Rate = 32.00 } },
+                { "GBP", new CurrencyInfo { Name = "British Pound Sterling", Rate = 37.50 } },
+                { "JPY", new CurrencyInfo { Name = "Japanese Yen", Rate = 0.25 } },
+                { "AUD", new CurrencyInfo { Name = "Australian Dollar", Rate = 20.00 } },
+                { "CAD", new CurrencyInfo { Name = "Canadian Dollar", Rate = 21.00 } },
+                { "CHF", new CurrencyInfo { Name = "Swiss Franc", Rate = 29.00 } },
+                { "CNY", new CurrencyInfo { Name = "Chinese Yuan", Rate = 4.30 } },
+                { "SEK", new CurrencyInfo { Name = "Swedish Krona", Rate = 3.10 } },
+                { "NOK", new CurrencyInfo { Name = "Norwegian Krone", Rate = 3.15 } }
             };
         }
 
         private void InitializeCurrencyComboBox()
         {
-            foreach (var currency in exchangeRates.Keys)
+            foreach (var currency in exchangeRates)
             {
-                CurrencyComboBox.Items.Add(currency);
+                CurrencyComboBox.Items.Add(new { Key = currency.Key, Name = $"{currency.Key} - {currency.Value.Name}" });
             }
             CurrencyComboBox.SelectedIndex = 0;
         }
@@ -49,8 +62,8 @@ namespace DPGI_Labs
             try
             {
                 double amount = double.Parse(AmountTextBox.Text);
-                string selectedCurrency = CurrencyComboBox.SelectedItem.ToString();
-                double rate = exchangeRates[selectedCurrency];
+                string selectedCurrency = ((dynamic)CurrencyComboBox.SelectedItem).Key;
+                double rate = exchangeRates[selectedCurrency].Rate;
                 double result = amount * rate;
                 ResultTextBlock.Text = $"{amount} {selectedCurrency} = {result} грн";
             }
@@ -65,8 +78,8 @@ namespace DPGI_Labs
             try
             {
                 double amount = double.Parse(AmountTextBox.Text);
-                string selectedCurrency = CurrencyComboBox.SelectedItem.ToString();
-                double rate = exchangeRates[selectedCurrency];
+                string selectedCurrency = ((dynamic)CurrencyComboBox.SelectedItem).Key;
+                double rate = exchangeRates[selectedCurrency].Rate;
                 double result = amount / rate;
                 ResultTextBlock.Text = $"{amount} грн = {result} {selectedCurrency}";
             }
