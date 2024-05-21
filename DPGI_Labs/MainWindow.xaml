@@ -14,8 +14,8 @@
             <TextBlock Text="Введіть вадюту" Margin="0,0,0,10"/>
             <ComboBox x:Name="CurrencyComboBox" Margin="0,0,0,10"/>
 
-            <Button Content="Конвертувати в грн" Margin="0,0,0,10"/>
-            <Button Content="Конвертувати з грн" Margin="0,0,0,10"/>
+            <Button Content="Конвертувати в грн" Click="ConvertToUahButton_Click" Margin="0,0,0,10"/>
+            <Button Content="Конвертувати з грн" Click="ConvertFromUahButton_Click" Margin="0,0,0,10"/>
 
             <TextBlock x:Name="ResultTextBlock" Margin="0,20,0,0" FontWeight="Bold"/>
         </StackPanel>
