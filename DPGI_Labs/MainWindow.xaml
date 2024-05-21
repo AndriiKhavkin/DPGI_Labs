@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DPGI_Labs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Конвертер валют" Height="350" Width="525">
     <Grid>
+        <StackPanel>
+            <TextBlock Text="Введіть сумму" Margin="0,0,0,10"/>
+            <TextBox x:Name="AmountTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Введіть вадюту" Margin="0,0,0,10"/>
+            <ComboBox x:Name="CurrencyComboBox" Margin="0,0,0,10"/>
+
+            <Button Content="Конвертувати в грн" Margin="0,0,0,10"/>
+            <Button Content="Конвертувати з грн" Margin="0,0,0,10"/>
+
+            <TextBlock x:Name="ResultTextBlock" Margin="0,20,0,0" FontWeight="Bold"/>
+        </StackPanel>
 
     </Grid>
 </Window>
