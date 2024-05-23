@@ -5,8 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DPGI_Labs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Дані про базу даних" Height="400" Width="800">
+    <Grid DataContext="{Binding ElementName=list, Path=SelectedItem}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="2" 
+                Margin = "0,0,0,3"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                Name="list"
+                ItemsSource="{Binding}" DisplayMemberPath="article"/>
+
+        <TextBlock Grid.Row="1" Margin="5">ID:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                     x:Name="IdTextBox"
+                    Text="{Binding Path=Id, Mode=OneWay}"
+                    Focusable="True"/>
+
+        <TextBlock Grid.Row="2" Margin="5">Номер залікової книги:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="2"
+                     x:Name="StudentIDTextBox"
+                    Text="{Binding Path=name, Mode=OneWay}"
+                    Focusable="True" />
+
+        <TextBlock Grid.Row="3" Margin="5">ПІБ:</TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="2"
+                     x:Name="FullNameTextBox"
+                     Text="{Binding Path=article, Mode=OneWay}"
+                    Focusable="True" />
+
+        <TextBlock Grid.Row="4" Margin="5">Група:</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="2"
+                     x:Name="GroupTextBox"
+                    Text="{Binding Path=unit_of_measure, Mode=OneWay}"
+                    Focusable="True" />
+
+        <TextBlock Grid.Row="5" Margin="5">Адреса:</TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="2"
+                     x:Name="AddressTextBox"
+                    Text="{Binding Path=quantity, Mode=OneWay}"
+                    Focusable="True" />
 
     </Grid>
 </Window>
