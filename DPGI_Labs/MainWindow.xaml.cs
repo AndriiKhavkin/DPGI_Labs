@@ -32,19 +32,18 @@ namespace DPGI_Labs
 
         private void LoadExchangeRates()
         {
-            // Приклад даних, додайте більше курсів за потреби
             exchangeRates = new Dictionary<string, CurrencyInfo>
             {
-                { "USD", new CurrencyInfo { Name = "United States Dollar", Rate = 27.50 } },
-                { "EUR", new CurrencyInfo { Name = "Euro", Rate = 32.00 } },
-                { "GBP", new CurrencyInfo { Name = "British Pound Sterling", Rate = 37.50 } },
+                { "USD", new CurrencyInfo { Name = "United States Dollar", Rate = 39.83 } },
+                { "EUR", new CurrencyInfo { Name = "Euro", Rate = 43.20 } },
+                { "GBP", new CurrencyInfo { Name = "British Pound Sterling", Rate = 50.69 } },
                 { "JPY", new CurrencyInfo { Name = "Japanese Yen", Rate = 0.25 } },
-                { "AUD", new CurrencyInfo { Name = "Australian Dollar", Rate = 20.00 } },
-                { "CAD", new CurrencyInfo { Name = "Canadian Dollar", Rate = 21.00 } },
-                { "CHF", new CurrencyInfo { Name = "Swiss Franc", Rate = 29.00 } },
-                { "CNY", new CurrencyInfo { Name = "Chinese Yuan", Rate = 4.30 } },
-                { "SEK", new CurrencyInfo { Name = "Swedish Krona", Rate = 3.10 } },
-                { "NOK", new CurrencyInfo { Name = "Norwegian Krone", Rate = 3.15 } }
+                { "AUD", new CurrencyInfo { Name = "Australian Dollar", Rate = 26.43 } },
+                { "CAD", new CurrencyInfo { Name = "Canadian Dollar", Rate = 29.13 } },
+                { "CHF", new CurrencyInfo { Name = "Swiss Franc", Rate = 43.61 } },
+                { "CNY", new CurrencyInfo { Name = "Chinese Yuan", Rate = 5.49 } },
+                { "SEK", new CurrencyInfo { Name = "Swedish Krona", Rate = 3.74 } },
+                { "NOK", new CurrencyInfo { Name = "Norwegian Krone", Rate = 3.75 } }
             };
         }
 
