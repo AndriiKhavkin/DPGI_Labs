@@ -27,7 +27,7 @@ namespace DPGI_Labs
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Products";
+                    string query = "SELECT * FROM Students";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -40,7 +40,7 @@ namespace DPGI_Labs
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Помилка під час виконання запиту до бази даних: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("Помилка під час виконання запиту до бази даних: " + ex.Message);
             }
 
             Console.WriteLine("123", dataTable);
