@@ -108,6 +108,8 @@ namespace DPGI_Labs
             }
         }
 
+
+
         //private void LoadExchangeRates()
         //{
         //   var exchangeRates = new Dictionary<string, CurrencyInfo>();
