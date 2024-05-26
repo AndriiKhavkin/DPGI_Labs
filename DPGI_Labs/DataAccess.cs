@@ -9,18 +9,18 @@ namespace DPGI_Labs
 {
     public class DataAccess
     {
-        private readonly string _connectionString;
+        private string connectionString;
 
         public DataAccess(string connectionString)
         {
-            _connectionString = connectionString;
+            this.connectionString = connectionString;
         }
 
         public List<CurrencyInfo> GetDataFromDatabase()
         {
             var currencies = new List<CurrencyInfo>();
 
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 string query = "SELECT CurrencyCode, CurrencyName, Rate FROM ExchangeRates";

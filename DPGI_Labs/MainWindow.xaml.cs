@@ -30,8 +30,6 @@ namespace DPGI_Labs
     //    }
     //}
 
-   
-
     public class CurrencyInfo
     {
         public int Id { get; set; }
@@ -53,8 +51,8 @@ namespace DPGI_Labs
         protected override void OnInitialized(EventArgs e)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-            DataAccess dataAccess = new DataAccess(connectionString);
-            List<CurrencyInfo> currencies = dataAccess.GetDataFromDatabase();
+            DataAccess CurrencyDB = new DataAccess(connectionString);
+            List<CurrencyInfo> currencies = CurrencyDB.GetDataFromDatabase();
 
             exchangeRates = currencies.ToDictionary(c => c.CurrencyCode, c => c);
 
